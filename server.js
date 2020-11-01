@@ -8,6 +8,7 @@ require("dotenv").config();
 
 //import route
 const blogRoutes = require("./routes/blog");
+const authRoutes = require("./routes/auth");
 
 const app = express();
 
@@ -32,6 +33,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api", blogRoutes);
+app.use("/api", authRoutes);
 
 const port = process.env.PORT || 5000;
 
